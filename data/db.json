@@ -10,18 +10,22 @@
       "id": 1
     },
     {
-      "title": "new task",
-      "isDone": true,
+      "title": "random task 3",
+      "assignee": "Reuben Devanesan",
+      "isDone": false,
       "isStarred": false,
-      "isInProgress": true,
-      "id": 2
+      "isInProgress": false,
+      "deadline": "2022-01-23T19:53:44.579Z",
+      "id": 3
     }
   ],
   "deleted-tasks": [
     {
       "title": "random",
+      "assignee": "reuben",
       "isDone": false,
-      "id": 1
+      "deadline": "2022-01-21T05:35:25.411Z",
+      "id": 2
     }
   ]
 }
