@@ -5,7 +5,8 @@ import useFetch from "./useFetch";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CompletedTasks = () => {
-  const {data: tasks, isPending, error} = useFetch('http://localhost:8000/tasks');
+  const baseurl = 'https://protected-brushlands-20047.herokuapp.com/';
+  const {data: tasks, isPending, error} = useFetch(baseurl + 'tasks');
 
   return (
     <div className = "container">

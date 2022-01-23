@@ -11,12 +11,13 @@ const AddTask = () => {
   const [isPending, setIsPending] = useState(false);
   const [deadline, setDeadline] = useState(new Date());
   const navigate = useNavigate();
+  const baseurl = 'https://protected-brushlands-20047.herokuapp.com/';
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = {title, assignee, isDone, isStarred, isInProgress, deadline};
     // console.log(blog);
-    fetch('http://localhost:8000/tasks', {
+    fetch(baseurl + 'tasks', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),

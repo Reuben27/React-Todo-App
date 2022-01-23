@@ -9,15 +9,16 @@ import { Link } from 'react-router-dom';
 const Task = (props) => {
   const task = props.task;
   const type = props.type;
+  const baseurl = 'https://protected-brushlands-20047.herokuapp.com/';
   
   const handleDelete = (task) => {
     // console.log(task.id);
-    fetch('http://localhost:8000/deleted-tasks', {
+    fetch(baseurl + 'deleted-tasks', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({"title" : task.title, "assignee" : task.assignee, "isDone": task.isDone, "deadline" : task.deadline,}),
     }).then(() => {
-      fetch('http://localhost:8000/tasks/' + task.id, {
+      fetch(baseurl + 'tasks/' + task.id, {
       method: 'DELETE',
       }).then(() => {
         // eslint-disable-next-line no-restricted-globals
@@ -28,7 +29,7 @@ const Task = (props) => {
 
   const handlePermanentDelete = (task) => {
     // console.log(task.id);
-    fetch('http://localhost:8000/deleted-tasks/' + task.id, {
+    fetch(baseurl + 'deleted-tasks/' + task.id, {
     method: 'DELETE',
     }).then(() => {
       // eslint-disable-next-line no-restricted-globals
@@ -41,7 +42,7 @@ const Task = (props) => {
     if(task.isDone === false){
       doo = true;
     }
-    fetch('http://localhost:8000/tasks/' + task.id, {
+    fetch(baseurl + 'tasks/' + task.id, {
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ "title" : task.title, "isDone" : doo, "isStarred": task.isStarred, "isInProgress": task.isInProgress}),
@@ -56,7 +57,7 @@ const Task = (props) => {
     if(task.isStarred === false){
       star = true;
     }
-    fetch('http://localhost:8000/tasks/' + task.id, {
+    fetch(baseurl + 'tasks/' + task.id, {
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ "title" : task.title, "isDone" : task.isDone, "isStarred": star, "isInProgress": task.isInProgress}),
@@ -71,7 +72,7 @@ const Task = (props) => {
     if(task.isInProgress === false){
       pro = true;
     }
-    fetch('http://localhost:8000/tasks/' + task.id, {
+    fetch(baseurl + 'tasks/' + task.id, {
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ "title" : task.title, "isDone" : task.isDone, "isStarred": task.isStarred, "isInProgress": pro}),

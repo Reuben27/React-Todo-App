@@ -4,7 +4,8 @@ import DateTimePicker from 'react-datetime-picker';
 
 const EditTask = () => {
   const {id} = useParams();
-  const url = 'http://localhost:8000/tasks/' + id;
+  const baseurl = 'https://protected-brushlands-20047.herokuapp.com/';
+  const url = baseurl + 'tasks/' + id;
   //const {data: task, isDataPending, error} = useFetch('http://localhost:8000/tasks/' + id);
 
   const [task, setTask] = useState(null);
@@ -62,7 +63,7 @@ const EditTask = () => {
     e.preventDefault();
     const blog = {title, assignee, isDone, isStarred, isInProgress, deadline};
     // console.log(blog);
-    fetch('http://localhost:8000/tasks/' + id, {
+    fetch(url, {
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
