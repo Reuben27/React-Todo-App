@@ -39,13 +39,15 @@ const Task = (props) => {
 
   const handleDone = (task) => {
     let doo = false;
+    let pro = task.isInProgress;
     if(task.isDone === false){
       doo = true;
+      pro = false;
     }
     fetch(baseurl + 'tasks/' + task.id, {
       method: 'PUT',
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ "title" : task.title, "isDone" : doo, "isStarred": task.isStarred, "isInProgress": task.isInProgress}),
+      body: JSON.stringify({ "title" : task.title, "isDone" : doo, "isStarred": task.isStarred, "isInProgress": pro}),
     }).then(() => {
       // eslint-disable-next-line no-restricted-globals
       location.reload();
