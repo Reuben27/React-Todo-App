@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "title": "Complete Code",
+      "isDone": false,
+      "isStarred": true,
+      "isInProgress": false,
+      "deadline": "2022-01-19T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "title": "Clean Up Code",
+      "isDone": false,
+      "isStarred": false,
+      "isInProgress": false,
+      "deadline": "2022-01-23T19:53:44.579Z",
+      "id": 2
+    }
+  ],
+  "deleted-tasks": [
+    {
+      "title": "random",
+      "isDone": false,
+      "isStarred": false,
+      "isInProgress": false,
+      "deadline": "2022-01-21T05:35:25.411Z",
+      "id": 3
+    }
+  ]
+}
