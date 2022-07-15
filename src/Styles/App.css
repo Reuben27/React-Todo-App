@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /* base styles */
@@ -23,6 +24,10 @@ body, .site {
   text-align: justify;
   background-color: #ffffff;
   font-family: 'Quicksand';
+}
+
+.left {
+  margin-right: auto;
 }
 
 /*Scrollbar Handle */
